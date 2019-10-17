@@ -15,7 +15,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-            android:id="@+id/editText"
+            android:id="@+id/Nom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -30,10 +30,10 @@
             android:layout_height="wrap_content"
             android:text="Prenom"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/Nom" />
 
     <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/Prenom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,14 +48,36 @@
             android:layout_height="wrap_content"
             android:text="Majeur"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintTop_toBottomOf="@+id/Prenom" />
 
     <Button
             android:id="@+id/button4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="onClickEvent"
             android:text="Valider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/portable" />
+
+    <EditText
+            android:id="@+id/mail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <EditText
+            android:id="@+id/portable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mail" />
 </android.support.constraint.ConstraintLayout>

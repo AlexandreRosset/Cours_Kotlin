@@ -14,9 +14,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun sendMessage(view: View) {
-        var psd = findViewById<EditText>(R.id.pseudo)
+        val psd = findViewById<EditText>(R.id.pseudo)
         var intent = intent
-        var msg = intent.getStringExtra("Message").toString()
+        val msg = intent.getStringExtra("Message").toString()
         intent = Intent(this, Page2::class.java)
         intent.putExtra("Message", msg)
         intent.putExtra("Pseudo", psd.text.toString())
