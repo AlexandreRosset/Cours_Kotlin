@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.support.v7.widget.Toolbar
 import android.telephony.SmsManager
 import android.view.View
 import android.widget.EditText
@@ -22,13 +23,14 @@ class UXcoursActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         var nom = findViewById<EditText>(R.id.Nom).text.toString()
         var prenom = findViewById<EditText>(R.id.Prenom).text.toString()
-        var mail = findViewById<EditText>(R.id.mail).text.toString()
+        val mail = findViewById<EditText>(R.id.mail).text.toString()
+        val portable = findViewById<EditText>(R.id.portable).text.toString()
         nom = verifTaille(nom)
         prenom = verifTaille(prenom)
         if (requestCode == 14540 && android.util.Patterns.EMAIL_ADDRESS.matcher(findViewById<EditText>(R.id.mail).text.toString()).matches() && android.util.Patterns.PHONE.matcher(findViewById<EditText>(R.id.portable).text.toString()).matches()){
             if (grantResults.size == 2 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED){
                 val manager = SmsManager.getDefault()
-                manager.sendTextMessage("0651678660", null, "$nom:$prenom\n$mail", null, null)
+                manager.sendTextMessage("0651678660", null, "$nom:$prenom\n$mail\n$portable", null, null)
             }
         }
     }

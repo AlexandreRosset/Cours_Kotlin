@@ -9,12 +9,6 @@ import android.content.pm.PackageManager
 import android.support.v4.app.ActivityCompat
 import android.telephony.SmsManager
 import android.widget.EditText
-import android.content.Context.TELEPHONY_SERVICE
-import android.support.v4.content.ContextCompat.getSystemService
-import android.telephony.TelephonyManager
-import android.support.v4.app.SupportActivity
-import android.support.v4.app.SupportActivity.ExtraData
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 
 
 
@@ -34,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun UXcours(view: View){
 
-        val intent = Intent(this, UXcoursActivity::class.java)
+        val intent = Intent(this, drawerActivity::class.java)
         startActivity(intent)
     }
     fun onClickEvent(view: View) {
